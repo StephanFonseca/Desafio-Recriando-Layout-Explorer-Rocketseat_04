@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --color-base-blue: #387E96;
+    --color-second-blue: rgba(255, 255, 255, 0.20);
+    --color-text-500: #202024;
+    --color-text-900: #121214;
+    --color-bg-white: #FFF;
+}
+
+html, body, input {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background: var(--color-bg-white);
+}
+
+#app {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "aside"
+    "footer"
+    ;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2.8rem;
+    background-color: var(--color-base-blue);
+    grid-area: header;
+}
+
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+}
+
+form label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+form input {
+    height: 4rem;
+    border-style: none;
+    border-radius: .4rem;
+    background-color: var(--color-second-blue);
+    color: var(--color-bg-white);
+    
+    font-size: 16px;
+    font-weight: 600;
+    
+    padding: 0 1.4rem;
+}
+
+form input::placeholder {
+    color: var(--color-bg-white);
+    opacity: 0.8;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.profile {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+}
+
+main {
+    grid-area: main;
+}
+
+.content-wrapper img {
+    width: 100%;
+    height: 21rem;
+    
+    object-fit: cover;
+}
+
+.text-wrapper {
+    margin: 0 24px 34px;
+}
+
+.text-wrapper .principle-title {
+    color: var(--color-text-500);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 160%;
+    margin: 32px 0 .8rem;
+}
+
+.buttons-wrapper{
+    display: flex;
+    gap: 1.2rem;
+}
+
+.buttons-like {
+    padding: 1.2rem;
+    border-radius: 50%;
+    background: var(--color-base-blue);
+}
+
+.background-image {
+    width: 100%;
+    height: 405px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://s3-alpha-sig.figma.com/img/c0c6/cdf1/a1594b7299539801368c0c67e82c1b97?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=m3-I2ia7YisNwQh5Vx6BrXJ6H9HHSNbQBqLWXvDkm1rd-nPF1qjghyVQLuLjSXf0a97xBW9FE4No~mWw49sNWbZcxKZT77OTqHBr8bL~JutwnQdCmKyDuYO5I-MKy9atahxFz9QXARWjdZ4sm9sDXsgv20jTKvwoX5CYlLD1U6SVbH4WSC76CKELTxk9FQfUSpSJGTSuWTJncsXwewCpp1ksNpS~e8mvGraYw6n4-8RhHsRaLzTqiiOh4Vx~Xsb6gvQpwsYvZiFlFpKcWzFM76DSyJyOPQNxJoZfAO-EMslNgjpabagIrSgiOv0f88BSbgzPGxHtfzbRn5FNAXp~6g__);
+}
+
+.text-wrapper img {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.text-wrapper p {
+    color: var(--color-text-900);
+    font-size: 1.6rem;  
+    line-height: 160%; 
+
+    margin-top: 3.1rem;
+
+}
+
+aside {
+    margin: 0 2.3rem;
+    grid-area: aside;
+}
+
+.card {
+
+    display: grid;
+    grid-template-areas: 
+    "img h2"
+    "img span";
+
+    column-gap: 1.6rem;
+
+    margin-bottom: 3.2rem;
+}
+
+.aside-wrapper .title {
+    color: var(--color-text-500);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 160%;
+    margin-bottom: 3.2rem;
+}
+
+section figure img {
+    width: 15rem;
+    height: 100%;
+    border-radius: .5rem;
+    object-fit: cover;
+}
+
+figcaption h2 {
+    color: var(--color-text-500);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 160%;
+}
+
+.description span {
+    color: var(--color-text-900);
+    font-size: 1.4rem;
+    line-height: 160%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6.4rem;
+
+    background: var(--color-base-blue);
+    color: var(--color-bg-white);
+
+
+    grid-area: footer;
+}   
+
+@media (min-width: 1020px) {
+    #app {
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 40px;
+
+        column-gap: 0px;
+
+        grid-template-areas: 
+        "header header header"
+        "main main aside"
+        "footer footer footer"
+        ;
+    }
+
+    input {
+       width:  90rem ; 
+    }
+
+  .content-wrapper img {
+    object-fit: fill;
+    height: auto;
+  }  
+  
+  .content-wrapper {
+    padding: 0 2.6rem 3.4rem;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.7rem;
+  }
+
+  .buttons-like {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+}
